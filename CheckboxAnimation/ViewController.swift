@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController, CheckboxDelegate {
+class ViewController: UIViewController {
     
     let strings = ["Mistanke om svindel",
                    "Regelbrudd",
@@ -24,9 +24,11 @@ class ViewController: UIViewController, CheckboxDelegate {
             selectionBox.heightAnchor.constraint(equalToConstant: CGFloat(strings.count) * 44),
         ])
     }
-    
+}
+
+extension ViewController: CheckboxDelegate {
+
     func checkbox(_ checkbox: Checkbox, didSelectItem item: CheckboxItem) {
         print("Did select item:", item)
     }
 }
-
