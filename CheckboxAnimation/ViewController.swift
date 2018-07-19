@@ -28,12 +28,5 @@ class ViewController: UIViewController, MultipleSelectionDelegate {
     func selection(_ selection: MultipleSelectionBox, didSelectItem item: CheckBox) {
         print("Did select item:", item)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
