@@ -12,8 +12,8 @@
 		DA774C1D20FDC9B700CDE820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA774C1C20FDC9B700CDE820 /* Assets.xcassets */; };
 		DA774C2020FDC9B700CDE820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA774C1E20FDC9B700CDE820 /* LaunchScreen.storyboard */; };
 		DACCBE002100AB3400858407 /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBDFF2100AB3400858407 /* AnimatedImageView.swift */; };
-		DACCBE022100AB4C00858407 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBE012100AB4C00858407 /* CheckBox.swift */; };
-		DACCBE042100AB7200858407 /* MultipleSelectionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBE032100AB7200858407 /* MultipleSelectionBox.swift */; };
+		DACCBE022100AB4C00858407 /* CheckboxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBE012100AB4C00858407 /* CheckboxItem.swift */; };
+		DACCBE042100AB7200858407 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBE032100AB7200858407 /* Checkbox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		DA774C1F20FDC9B700CDE820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA774C2120FDC9B700CDE820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DACCBDFF2100AB3400858407 /* AnimatedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImageView.swift; sourceTree = "<group>"; };
-		DACCBE012100AB4C00858407 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
-		DACCBE032100AB7200858407 /* MultipleSelectionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionBox.swift; sourceTree = "<group>"; };
+		DACCBE012100AB4C00858407 /* CheckboxItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxItem.swift; sourceTree = "<group>"; };
+		DACCBE032100AB7200858407 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +61,8 @@
 				DA774C1520FDC9B500CDE820 /* AppDelegate.swift */,
 				DA774C1720FDC9B500CDE820 /* ViewController.swift */,
 				DACCBDFF2100AB3400858407 /* AnimatedImageView.swift */,
-				DACCBE012100AB4C00858407 /* CheckBox.swift */,
-				DACCBE032100AB7200858407 /* MultipleSelectionBox.swift */,
+				DACCBE012100AB4C00858407 /* CheckboxItem.swift */,
+				DACCBE032100AB7200858407 /* Checkbox.swift */,
 				DA774C1C20FDC9B700CDE820 /* Assets.xcassets */,
 				DA774C1E20FDC9B700CDE820 /* LaunchScreen.storyboard */,
 				DA774C2120FDC9B700CDE820 /* Info.plist */,
@@ -140,9 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DACCBE042100AB7200858407 /* MultipleSelectionBox.swift in Sources */,
+				DACCBE042100AB7200858407 /* Checkbox.swift in Sources */,
 				DA774C1820FDC9B500CDE820 /* ViewController.swift in Sources */,
-				DACCBE022100AB4C00858407 /* CheckBox.swift in Sources */,
+				DACCBE022100AB4C00858407 /* CheckboxItem.swift in Sources */,
 				DACCBE002100AB3400858407 /* AnimatedImageView.swift in Sources */,
 				DA774C1620FDC9B500CDE820 /* AppDelegate.swift in Sources */,
 			);

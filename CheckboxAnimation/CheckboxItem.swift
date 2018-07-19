@@ -1,6 +1,6 @@
 import UIKit
 
-class CheckBox: UIView {
+class CheckboxItem: UIView {
     
     let imageView: AnimatedImageView
     let label: UILabel = {
@@ -15,14 +15,14 @@ class CheckBox: UIView {
         }
     }
     
-    init(selected: [UIImage], unselected: [UIImage]) {
-        imageView = AnimatedImageView(image: unselected.last, highlightedImage: selected.last)
+    init(selectedImages: [UIImage], unselectedImages: [UIImage]) {
+        imageView = AnimatedImageView(image: unselectedImages.last, highlightedImage: selectedImages.last)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.animationImages = unselected
-        imageView.highlightedAnimationImages = selected
+        imageView.animationImages = unselectedImages
+        imageView.highlightedAnimationImages = selectedImages
         imageView.animationRepeatCount = 1
-        imageView.selectedDuration = Double(selected.count) / 60.0
-        imageView.unselectedDuration = Double(unselected.count) / 60.0
+        imageView.selectedDuration = Double(selectedImages.count) / 60.0
+        imageView.unselectedDuration = Double(unselectedImages.count) / 60.0
         super.init(frame: .zero)
         setupSubviews()
     }
