@@ -1,10 +1,10 @@
 import UIKit
 
-protocol MultipleSelectionDelegate: class {
-    func selection(_ selection: MultipleSelectionBox, didSelectItem item: CheckBox)
+protocol CheckboxDelegate: class {
+    func checkbox(_ checkbox: Checkbox, didSelectItem item: CheckboxItem)
 }
 
-class MultipleSelectionBox: UIView {
+class Checkbox: UIView {
     
     private let stack: UIStackView = {
         let stack = UIStackView(frame: .zero)
@@ -13,10 +13,10 @@ class MultipleSelectionBox: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
-    private let unselected = UIImage.animatedImageNamed("radiobutton-unselected-", duration: 14 / 60.0)
-    private let selected = UIImage.animatedImageNamed("checkbox-selected-", duration: 20 / 60.0)
+    private let unselectedImages = UIImage.animatedImageNamed("checkbox-unselected-", duration: 14 / 60.0)
+    private let selectedImages = UIImage.animatedImageNamed("checkbox-selected-", duration: 20 / 60.0)
     
-    weak var delegate: MultipleSelectionDelegate?
+    weak var delegate: CheckboxDelegate?
     
     init(strings: [String]) {
         super.init(frame: .zero)
@@ -25,9 +25,9 @@ class MultipleSelectionBox: UIView {
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {
-        guard let view = hitTest(sender.location(in: stack), with: nil) as? CheckBox else { return }
+        guard let view = hitTest(sender.location(in: stack), with: nil) as? CheckboxItem else { return }
         view.isSelected = !view.isSelected
-        delegate?.selection(self, didSelectItem: view)
+        delegate?.checkbox(self, didSelectItem: view)
     }
     
     private func setupTapGesture() {
@@ -36,10 +36,10 @@ class MultipleSelectionBox: UIView {
     }
     
     private func setupBoxes(with strings: [String]) {
-        guard let selected = selected?.images, let unselected = unselected?.images else { return }
+        guard let selected = selectedImages?.images, let unselected = unselectedImages?.images else { return }
         
         for string in strings {
-            let checkBox = CheckBox(selected: selected, unselected: unselected)
+            let checkBox = CheckboxItem(selectedImages: selected, unselectedImages: unselected)
             checkBox.label.text = string
             stack.addArrangedSubview(checkBox)
         }

@@ -1,13 +1,13 @@
 import UIKit
 
-class ViewController: UIViewController, MultipleSelectionDelegate {
+class ViewController: UIViewController, CheckboxDelegate {
     
     let strings = ["Mistanke om svindel",
                    "Regelbrudd",
                    "Forhandler opptrer som privat"]
     
-    lazy var selectionBox: MultipleSelectionBox = {
-        let box = MultipleSelectionBox(strings: strings)
+    lazy var selectionBox: Checkbox = {
+        let box = Checkbox(strings: strings)
         box.delegate = self
         box.translatesAutoresizingMaskIntoConstraints = false
         return box
@@ -25,7 +25,7 @@ class ViewController: UIViewController, MultipleSelectionDelegate {
         ])
     }
     
-    func selection(_ selection: MultipleSelectionBox, didSelectItem item: CheckBox) {
+    func checkbox(_ checkbox: Checkbox, didSelectItem item: CheckboxItem) {
         print("Did select item:", item)
     }
 }
