@@ -1,14 +1,6 @@
-//
-//  AnImageView.swift
-//  CheckboxAnimation
-//
-//  Created by Granheim Brustad , Henrik on 19/07/2018.
-//  Copyright © 2018 Granheim Brustad , Henrik. All rights reserved.
-//
-
 import UIKit
 
-class AnImageView: UIImageView {
+class AnimatedImageView: UIImageView {
     
     private var startTime: TimeInterval?
     private var reverseImageView: UIImageView? // Used for reversing an animation

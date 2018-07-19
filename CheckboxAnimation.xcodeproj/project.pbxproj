@@ -7,29 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA53776420FF1E4000D1EABC /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA53776320FF1E4000D1EABC /* AnimatableImageView.swift */; };
-		DA53776620FF1E7900D1EABC /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA53776520FF1E7900D1EABC /* ToggleButton.swift */; };
 		DA774C1620FDC9B500CDE820 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA774C1520FDC9B500CDE820 /* AppDelegate.swift */; };
 		DA774C1820FDC9B500CDE820 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA774C1720FDC9B500CDE820 /* ViewController.swift */; };
 		DA774C1D20FDC9B700CDE820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA774C1C20FDC9B700CDE820 /* Assets.xcassets */; };
 		DA774C2020FDC9B700CDE820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA774C1E20FDC9B700CDE820 /* LaunchScreen.storyboard */; };
-		DA9BDA232100745D0037C71C /* SpriteBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9BDA222100745D0037C71C /* SpriteBox.swift */; };
-		DACCBE002100AB3400858407 /* AnImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBDFF2100AB3400858407 /* AnImageView.swift */; };
+		DACCBE002100AB3400858407 /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBDFF2100AB3400858407 /* AnimatedImageView.swift */; };
 		DACCBE022100AB4C00858407 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBE012100AB4C00858407 /* CheckBox.swift */; };
 		DACCBE042100AB7200858407 /* MultipleSelectionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBE032100AB7200858407 /* MultipleSelectionBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA53776320FF1E4000D1EABC /* AnimatableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableImageView.swift; sourceTree = "<group>"; };
-		DA53776520FF1E7900D1EABC /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		DA774C1220FDC9B500CDE820 /* CheckboxAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckboxAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA774C1520FDC9B500CDE820 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA774C1720FDC9B500CDE820 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA774C1C20FDC9B700CDE820 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA774C1F20FDC9B700CDE820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA774C2120FDC9B700CDE820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA9BDA222100745D0037C71C /* SpriteBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteBox.swift; sourceTree = "<group>"; };
-		DACCBDFF2100AB3400858407 /* AnImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnImageView.swift; sourceTree = "<group>"; };
+		DACCBDFF2100AB3400858407 /* AnimatedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImageView.swift; sourceTree = "<group>"; };
 		DACCBE012100AB4C00858407 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		DACCBE032100AB7200858407 /* MultipleSelectionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,25 +60,14 @@
 			children = (
 				DA774C1520FDC9B500CDE820 /* AppDelegate.swift */,
 				DA774C1720FDC9B500CDE820 /* ViewController.swift */,
-				DACCBDFF2100AB3400858407 /* AnImageView.swift */,
+				DACCBDFF2100AB3400858407 /* AnimatedImageView.swift */,
 				DACCBE012100AB4C00858407 /* CheckBox.swift */,
 				DACCBE032100AB7200858407 /* MultipleSelectionBox.swift */,
 				DA774C1C20FDC9B700CDE820 /* Assets.xcassets */,
 				DA774C1E20FDC9B700CDE820 /* LaunchScreen.storyboard */,
 				DA774C2120FDC9B700CDE820 /* Info.plist */,
-				DACCBDFE2100AB0A00858407 /* Other approaches */,
 			);
 			path = CheckboxAnimation;
-			sourceTree = "<group>";
-		};
-		DACCBDFE2100AB0A00858407 /* Other approaches */ = {
-			isa = PBXGroup;
-			children = (
-				DA53776320FF1E4000D1EABC /* AnimatableImageView.swift */,
-				DA53776520FF1E7900D1EABC /* ToggleButton.swift */,
-				DA9BDA222100745D0037C71C /* SpriteBox.swift */,
-			);
-			path = "Other approaches";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,12 +141,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DACCBE042100AB7200858407 /* MultipleSelectionBox.swift in Sources */,
-				DA53776620FF1E7900D1EABC /* ToggleButton.swift in Sources */,
 				DA774C1820FDC9B500CDE820 /* ViewController.swift in Sources */,
-				DA9BDA232100745D0037C71C /* SpriteBox.swift in Sources */,
 				DACCBE022100AB4C00858407 /* CheckBox.swift in Sources */,
-				DACCBE002100AB3400858407 /* AnImageView.swift in Sources */,
-				DA53776420FF1E4000D1EABC /* AnimatableImageView.swift in Sources */,
+				DACCBE002100AB3400858407 /* AnimatedImageView.swift in Sources */,
 				DA774C1620FDC9B500CDE820 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  CheckboxAnimation
-//
-//  Created by Granheim Brustad , Henrik on 17/07/2018.
-//  Copyright © 2018 Granheim Brustad , Henrik. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController, MultipleSelectionDelegate {
@@ -36,12 +28,5 @@ class ViewController: UIViewController, MultipleSelectionDelegate {
     func selection(_ selection: MultipleSelectionBox, didSelectItem item: CheckBox) {
         print("Did select item:", item)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
