@@ -1,16 +1,8 @@
-//
-//  CheckBox.swift
-//  CheckboxAnimation
-//
-//  Created by Granheim Brustad , Henrik on 19/07/2018.
-//  Copyright © 2018 Granheim Brustad , Henrik. All rights reserved.
-//
-
 import UIKit
 
 class CheckBox: UIView {
     
-    let imageView: AnImageView
+    let imageView: AnimatedImageView
     let label: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +16,7 @@ class CheckBox: UIView {
     }
     
     init(selected: [UIImage], unselected: [UIImage]) {
-        imageView = AnImageView(image: unselected.last, highlightedImage: selected.last)
+        imageView = AnimatedImageView(image: unselected.last, highlightedImage: selected.last)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.animationImages = unselected
         imageView.highlightedAnimationImages = selected

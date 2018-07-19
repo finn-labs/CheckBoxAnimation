@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  CheckboxAnimation
-//
-//  Created by Granheim Brustad , Henrik on 17/07/2018.
-//  Copyright © 2018 Granheim Brustad , Henrik. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController, MultipleSelectionDelegate {
