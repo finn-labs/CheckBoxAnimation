@@ -1,6 +1,8 @@
 
 import UIKit
 
+/* Selection box for selecting a singel item */
+
 class Radiobox: SelectionBox {
     
     weak var selectedItem: SelectionBoxItem?

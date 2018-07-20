@@ -13,6 +13,7 @@
 		DA774C2020FDC9B700CDE820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA774C1E20FDC9B700CDE820 /* LaunchScreen.storyboard */; };
 		DAA9A39B2101F9A60021F7DC /* SelectionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9A39A2101F9A60021F7DC /* SelectionBox.swift */; };
 		DAA9A39D210202770021F7DC /* Radiobox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9A39C210202770021F7DC /* Radiobox.swift */; };
+		DAA9A3A121020EE70021F7DC /* RadioButton.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAA9A3A021020EE70021F7DC /* RadioButton.xcassets */; };
 		DACCBE002100AB3400858407 /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBDFF2100AB3400858407 /* AnimatedImageView.swift */; };
 		DACCBE022100AB4C00858407 /* SelectionBoxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBE012100AB4C00858407 /* SelectionBoxItem.swift */; };
 		DACCBE042100AB7200858407 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBE032100AB7200858407 /* Checkbox.swift */; };
@@ -27,6 +28,7 @@
 		DA774C2120FDC9B700CDE820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA9A39A2101F9A60021F7DC /* SelectionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionBox.swift; sourceTree = "<group>"; };
 		DAA9A39C210202770021F7DC /* Radiobox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radiobox.swift; sourceTree = "<group>"; };
+		DAA9A3A021020EE70021F7DC /* RadioButton.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RadioButton.xcassets; sourceTree = "<group>"; };
 		DACCBDFF2100AB3400858407 /* AnimatedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImageView.swift; sourceTree = "<group>"; };
 		DACCBE012100AB4C00858407 /* SelectionBoxItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionBoxItem.swift; sourceTree = "<group>"; };
 		DACCBE032100AB7200858407 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				DA774C1C20FDC9B700CDE820 /* Assets.xcassets */,
 				DA774C1E20FDC9B700CDE820 /* LaunchScreen.storyboard */,
 				DA774C2120FDC9B700CDE820 /* Info.plist */,
+				DAA9A3A021020EE70021F7DC /* RadioButton.xcassets */,
 			);
 			path = CheckboxAnimation;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			files = (
 				DA774C2020FDC9B700CDE820 /* LaunchScreen.storyboard in Resources */,
 				DA774C1D20FDC9B700CDE820 /* Assets.xcassets in Resources */,
+				DAA9A3A121020EE70021F7DC /* RadioButton.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

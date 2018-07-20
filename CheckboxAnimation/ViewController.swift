@@ -6,8 +6,8 @@ class ViewController: UIViewController {
                    "Regelbrudd",
                    "Forhandler opptrer som privat"]
     
-    lazy var checkbox: Radiobox = {
-        let box = Radiobox(strings: strings)
+    lazy var checkbox: Checkbox = {
+        let box = Checkbox(strings: strings)
         box.title = "Hva gjelder det?"
         box.delegate = self
         box.font = .systemFont(ofSize: 16)
@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let selectedAnimationImage = UIImage.animatedImageNamed("checkbox-selected-", duration: 20 / 60.0)
-        let unselectedAnimationImage = UIImage.animatedImageNamed("checkbox-unselected-", duration: 14 / 60.0)
+        let selectedAnimationImage = UIImage.animatedImageNamed("checkbox-selected-", duration: 41 / 60.0)
+        let unselectedAnimationImage = UIImage.animatedImageNamed("checkbox-unselected-", duration: 10 / 60.0)
         
         checkbox.selectedImage = selectedAnimationImage?.images?.last
         checkbox.selectedAnimationImages = selectedAnimationImage?.images

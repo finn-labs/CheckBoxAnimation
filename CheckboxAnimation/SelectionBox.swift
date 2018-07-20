@@ -8,16 +8,6 @@ protocol SelectionBoxDelegate: class {
 
 class SelectionBox: UIView {
     
-    @objc dynamic var textColor: UIColor {
-        get { return SelectionBoxItem.appearance().textColor }
-        set { SelectionBoxItem.appearance().textColor = newValue }
-    }
-    
-    @objc dynamic var font: UIFont {
-        get { return SelectionBoxItem.appearance().font }
-        set { SelectionBoxItem.appearance().font = newValue }
-    }
-    
     var unselectedImage: UIImage? {
         didSet {
             for item in stack.arrangedSubviews as! [SelectionBoxItem] {
@@ -131,4 +121,18 @@ extension SelectionBox {
             stack.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
             stack.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
-    }}
+    }
+}
+
+extension SelectionBox {
+    
+    @objc dynamic var textColor: UIColor {
+        get { return SelectionBoxItem.appearance().textColor }
+        set { SelectionBoxItem.appearance().textColor = newValue }
+    }
+    
+    @objc dynamic var font: UIFont {
+        get { return SelectionBoxItem.appearance().font }
+        set { SelectionBoxItem.appearance().font = newValue }
+    }
+}

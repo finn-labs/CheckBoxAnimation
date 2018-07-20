@@ -1,5 +1,7 @@
 import UIKit
 
+/* Selection box for selecting multiple items */
+
 class Checkbox: SelectionBox {
     
     var selectedItems: Set<SelectionBoxItem> = []
