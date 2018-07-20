@@ -1,5 +1,10 @@
 import UIKit
 
+/* UIImageView which will play the current animation
+ sequence in reverse when it is cancelled. The
+ initial frame of the reverse animation will be the
+ current frame of the cancelled animation */
+
 class AnimatedImageView: UIImageView {
     
     private var startTime: TimeInterval?

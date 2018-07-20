@@ -1,9 +1,10 @@
 import UIKit
 
-class CheckboxItem: UIView {
+class SelectionBoxItem: UIView {
     
     let imageView: AnimatedImageView = {
         let view = AnimatedImageView(frame: .zero)
+        view.contentMode = .scaleAspectFit
         view.animationRepeatCount = 1
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -14,7 +15,7 @@ class CheckboxItem: UIView {
         return label
     }()
     
-    var isSelected = false {
+    var isSelected: Bool = false {
         didSet {
             animateImage(selected: isSelected)
         }
@@ -35,6 +36,13 @@ class CheckboxItem: UIView {
         setupSubviews()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension SelectionBoxItem {
+    
     private func animateImage(selected: Bool) {
         if imageView.isAnimating {
             imageView.cancelAnimation()
@@ -50,20 +58,11 @@ class CheckboxItem: UIView {
     private func setupSubviews() {
         addSubview(imageView)
         addSubview(label)
-        
         NSLayoutConstraint.activate([
-            imageView.leftAnchor.constraint(equalTo: leftAnchor),
+            imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 8),
             imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 20),
-            imageView.heightAnchor.constraint(equalToConstant: 20),
-            
-            label.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8),
-            label.rightAnchor.constraint(equalTo: rightAnchor),
+            label.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 16),
             label.centerYAnchor.constraint(equalTo: centerYAnchor)
             ])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
