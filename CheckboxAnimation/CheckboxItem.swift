@@ -2,7 +2,12 @@ import UIKit
 
 class CheckboxItem: UIView {
     
-    let imageView: AnimatedImageView
+    let imageView: AnimatedImageView = {
+        let view = AnimatedImageView(frame: .zero)
+        view.animationRepeatCount = 1
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     let label: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -15,21 +20,23 @@ class CheckboxItem: UIView {
         }
     }
     
-    init(selectedImages: [UIImage], unselectedImages: [UIImage]) {
-        imageView = AnimatedImageView(image: unselectedImages.last, highlightedImage: selectedImages.last)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.animationImages = unselectedImages
-        imageView.highlightedAnimationImages = selectedImages
-        imageView.animationRepeatCount = 1
-        imageView.selectedDuration = Double(selectedImages.count) / 60.0
-        imageView.unselectedDuration = Double(unselectedImages.count) / 60.0
-        super.init(frame: .zero)
+    @objc dynamic var textColor: UIColor {
+        get { return label.textColor }
+        set { label.textColor = newValue }
+    }
+    
+    @objc dynamic var font: UIFont {
+        get { return label.font }
+        set { label.font = newValue }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupSubviews()
     }
     
     private func animateImage(selected: Bool) {
         if imageView.isAnimating {
-            print("cancel")
             imageView.cancelAnimation()
             imageView.isHighlighted = selected
             return
@@ -45,13 +52,13 @@ class CheckboxItem: UIView {
         addSubview(label)
         
         NSLayoutConstraint.activate([
-            imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
+            imageView.leftAnchor.constraint(equalTo: leftAnchor),
             imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             imageView.widthAnchor.constraint(equalToConstant: 20),
             imageView.heightAnchor.constraint(equalToConstant: 20),
             
             label.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8),
-            label.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
+            label.rightAnchor.constraint(equalTo: rightAnchor),
             label.centerYAnchor.constraint(equalTo: centerYAnchor)
             ])
     }

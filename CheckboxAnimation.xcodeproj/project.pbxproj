@@ -60,9 +60,9 @@
 			children = (
 				DA774C1520FDC9B500CDE820 /* AppDelegate.swift */,
 				DA774C1720FDC9B500CDE820 /* ViewController.swift */,
-				DACCBDFF2100AB3400858407 /* AnimatedImageView.swift */,
-				DACCBE012100AB4C00858407 /* CheckboxItem.swift */,
 				DACCBE032100AB7200858407 /* Checkbox.swift */,
+				DACCBE012100AB4C00858407 /* CheckboxItem.swift */,
+				DACCBDFF2100AB3400858407 /* AnimatedImageView.swift */,
 				DA774C1C20FDC9B700CDE820 /* Assets.xcassets */,
 				DA774C1E20FDC9B700CDE820 /* LaunchScreen.storyboard */,
 				DA774C2120FDC9B700CDE820 /* Info.plist */,

@@ -6,6 +6,66 @@ protocol CheckboxDelegate: class {
 
 class Checkbox: UIView {
     
+    @objc dynamic var textColor: UIColor {
+        get { return CheckboxItem.appearance().textColor }
+        set { CheckboxItem.appearance().textColor = newValue }
+    }
+    
+    @objc dynamic var font: UIFont {
+        get { return CheckboxItem.appearance().font }
+        set { CheckboxItem.appearance().font = newValue }
+    }
+    
+    var contentInsets: UIEdgeInsets = .zero {
+        didSet {
+            constraint(with: contentInsets)
+        }
+    }
+    
+    var unselectedImage: UIImage? {
+        didSet {
+            for item in stack.arrangedSubviews as! [CheckboxItem] {
+                item.imageView.image = unselectedImage
+            }
+        }
+    }
+    
+    var unselectedAnimationImages: [UIImage]? {
+        didSet {
+            for item in stack.arrangedSubviews as! [CheckboxItem] {
+                item.imageView.animationImages = unselectedAnimationImages
+                if let unselected = unselectedAnimationImages {
+                    item.imageView.unselectedDuration = Double(unselected.count) / 60.0
+                }
+            }
+        }
+    }
+    
+    var selectedImage: UIImage? {
+        didSet {
+            for item in stack.arrangedSubviews as! [CheckboxItem] {
+                item.imageView.highlightedImage = selectedImage
+            }
+        }
+    }
+    
+    var selectedAnimationImages: [UIImage]? {
+        didSet {
+            for item in stack.arrangedSubviews as! [CheckboxItem] {
+                item.imageView.highlightedAnimationImages = selectedAnimationImages
+                if let selected = selectedAnimationImages {
+                    item.imageView.selectedDuration = Double(selected.count) / 60.0
+                }
+            }
+        }
+    }
+    
+    weak var delegate: CheckboxDelegate?
+    
+    // MARK: Private properties
+    
+    private var leftConstraint, topConstraint, rightConstraint, bottomConstraint: NSLayoutConstraint!
+    
     private let stack: UIStackView = {
         let stack = UIStackView(frame: .zero)
         stack.axis = .vertical
@@ -13,10 +73,6 @@ class Checkbox: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
-    private let unselectedImages = UIImage.animatedImageNamed("checkbox-unselected-", duration: 14 / 60.0)
-    private let selectedImages = UIImage.animatedImageNamed("checkbox-selected-", duration: 20 / 60.0)
-    
-    weak var delegate: CheckboxDelegate?
     
     init(strings: [String]) {
         super.init(frame: .zero)
@@ -25,7 +81,7 @@ class Checkbox: UIView {
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {
-        guard let view = hitTest(sender.location(in: stack), with: nil) as? CheckboxItem else { return }
+        guard let view = hitTest(sender.location(in: self), with: nil) as? CheckboxItem else { return }
         view.isSelected = !view.isSelected
         delegate?.checkbox(self, didSelectItem: view)
     }
@@ -36,22 +92,27 @@ class Checkbox: UIView {
     }
     
     private func setupBoxes(with strings: [String]) {
-        guard let selected = selectedImages?.images, let unselected = unselectedImages?.images else { return }
-        
         for string in strings {
-            let checkBox = CheckboxItem(selectedImages: selected, unselectedImages: unselected)
-            checkBox.label.text = string
-            stack.addArrangedSubview(checkBox)
+            let item = CheckboxItem(frame: .zero)
+            item.label.text = string
+            stack.addArrangedSubview(item)
         }
-        
         addSubview(stack)
-        
-        NSLayoutConstraint.activate([
-            stack.leftAnchor.constraint(equalTo: leftAnchor),
-            stack.topAnchor.constraint(equalTo: topAnchor),
-            stack.rightAnchor.constraint(equalTo: rightAnchor),
-            stack.bottomAnchor.constraint(equalTo: bottomAnchor),
-            ])
+        leftConstraint = stack.leftAnchor.constraint(equalTo: leftAnchor)
+        topConstraint = stack.topAnchor.constraint(equalTo: topAnchor)
+        rightConstraint = stack.rightAnchor.constraint(equalTo: rightAnchor)
+        bottomConstraint = stack.bottomAnchor.constraint(equalTo: bottomAnchor)
+        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+    }
+    
+    private func constraint(with contentInsets: UIEdgeInsets) {
+        leftConstraint.constant = contentInsets.left
+        topConstraint.constant = contentInsets.top
+        rightConstraint.constant = -contentInsets.right
+        bottomConstraint.constant = -contentInsets.bottom
+        if superview != nil {
+            layoutIfNeeded()
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
